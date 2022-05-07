@@ -3,8 +3,10 @@ import React, {useState } from 'react';
 import './App.css';
 import Header from './Header';
 import axios from 'axios';
-function Cadastro() {
+import { useNavigate } from "react-router-dom";
 
+function Cadastro() {
+const navigate = useNavigate();
 
   const [campos, setCampos] = useState({
        txtLogin: '',
@@ -20,8 +22,11 @@ function Cadastro() {
         event.preventDefault();
         console.log(campos);
         axios.post('http://localhost:3010/cadastro', campos).then(response => {
-        alert(response.data.message) });
-
+        alert(response.data.message)
+        if(response.data.concluido==true){
+         navigate("/");
+          }
+      });
 
     }
 

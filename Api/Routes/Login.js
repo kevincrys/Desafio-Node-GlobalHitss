@@ -9,13 +9,7 @@ router.post('/', function(req, res, next) {
 
   var sqlp = db.selectUsers(req.body.txtLogin);
   sqlp.then(sql => {
-    console.log(sql);
-    console.log(sql[0]);
-    if(sql[0] == undefined){
-  console.log('undefined');
-     }
-     if(sql == ""){
-   console.log('Vazio');
+     if(sql != ""){
       }
  })
 })
