@@ -1,6 +1,7 @@
 import React, {useState } from 'react';
 import './App.css';
 import Header from './Header';
+import axios from 'axios';
 
 function Login() {
 
@@ -17,7 +18,8 @@ function Login() {
     function submit(event){
         event.preventDefault();
         console.log(campos);
-         alert('Dados enviados');
+        axios.post('http://localhost:3010/login', campos).then(response => {
+        alert('Dados enviados') });
     }
 
   return (
@@ -31,7 +33,7 @@ function Login() {
       <form   onSubmit={submit} align="center">
 
               <legend>
-                  <h2>Cadastro</h2>
+                  <h2>Login</h2>
               </legend>
 
               <div>

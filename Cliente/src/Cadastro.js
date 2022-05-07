@@ -2,7 +2,9 @@
 import React, {useState } from 'react';
 import './App.css';
 import Header from './Header';
+import axios from 'axios';
 function Cadastro() {
+
 
   const [campos, setCampos] = useState({
        txtLogin: '',
@@ -17,7 +19,10 @@ function Cadastro() {
     function submit(event){
         event.preventDefault();
         console.log(campos);
-         alert('Dados enviados');
+        axios.post('http://localhost:3010/cadastro', campos).then(response => {
+        alert('Dados enviados') });
+
+
     }
 
   return (
