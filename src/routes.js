@@ -1,17 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Route ,Router } from "react-router-dom";
+import Login from './Login';
+import Cadastro from './Cadastro';
+import { BrowserRouter, Route ,Routes } from "react-router-dom";
 
 
-import Login from "./Login";
 
 
 function MyRoutes() {
   return (
-    <Router>
-
-      <Route path="/" component={Login} />
-
-    </Router>
+    <BrowserRouter>
+           <Routes>
+              <Route path="/" element={<Login/>} />
+              <Route path="/Cadastro" element={<Cadastro/>} />
+           </Routes>
+        </BrowserRouter>
   );
 }
 
