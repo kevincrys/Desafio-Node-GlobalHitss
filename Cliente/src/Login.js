@@ -5,12 +5,13 @@ import axios from 'axios';
 import { Link} from "react-router-dom";
 
 function Login() {
-
+//variaveis de parametros usadas 
   const [campos, setCampos] = useState({
        txtLogin: '',
        txtSenha: ''
 
    });
+   //atualização de valores das variavies
    function updateInputs(event){
        campos[event.target.name] = event.target.value;
        setCampos(campos);

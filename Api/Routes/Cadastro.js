@@ -3,15 +3,12 @@ var router = express.Router();
 const bodyParser = require('body-parser');
 const db = require("../db/db");
 
-router.get('/', function(req, res, next) {
-res.send("eeeee");
-     })
-
 
 router.post('/', function(req, res, next) {
 
  var sqlp = db.selectUsers(req.body.txtLogin);
  sqlp.then(sql => {
+   //vereifica se não foi retornado usuário com esse nome
     if(sql == ""){
 
  var insert = db.insertUsers({Login:req.body.txtLogin , Senha:req.body.txtSenha,Email:req.body.txtEmail})

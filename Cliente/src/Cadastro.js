@@ -7,12 +7,13 @@ import { useNavigate } from "react-router-dom";
 
 function Cadastro() {
 const navigate = useNavigate();
-
+//variaveis de parametros usadas
   const [campos, setCampos] = useState({
        txtLogin: '',
        txtSenha: '',
        txtEmail: ''
    });
+      //atualização de valores das variavies
    function updateInputs(event){
        campos[event.target.name] = event.target.value;
        setCampos(campos);

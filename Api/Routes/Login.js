@@ -7,6 +7,7 @@ router.post('/', function(req, res, next) {
 
   var sqlp = db.selectUsers(req.body.txtLogin);
   sqlp.then(sql => {
+       //vereifica se  foi retornado usuário com esse nome
      if(sql != ""){
       if(sql[0].Senha == req.body.txtSenha){
         res.json({message: "Usuário logado com sucesso", concluido: true});
