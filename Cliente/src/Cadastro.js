@@ -20,7 +20,7 @@ function Cadastro() {
         event.preventDefault();
         console.log(campos);
         axios.post('http://localhost:3010/cadastro', campos).then(response => {
-        alert('Dados enviados') });
+        alert(response.data.message) });
 
 
     }
