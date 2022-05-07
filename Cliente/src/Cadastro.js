@@ -20,13 +20,16 @@ const navigate = useNavigate();
 
     function submit(event){
         event.preventDefault();
-        console.log(campos);
+        if(campos.txtLogin !=='' && campos.txtSenha !=='' && campos.txtEmail !==''){
         axios.post('http://localhost:3010/cadastro', campos).then(response => {
         alert(response.data.message)
         if(response.data.concluido===true){
          navigate("/");
           }
+
       });
+    }
+    else{alert("Preencha todos os campos")}
 
     }
 

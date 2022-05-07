@@ -9,9 +9,6 @@ res.send("eeeee");
 
 
 router.post('/', function(req, res, next) {
- console.log(req.body.txtLogin);
- console.log(req.body.txtSenha);
- console.log(req.body.txtEmail);
 
  var sqlp = db.selectUsers(req.body.txtLogin);
  sqlp.then(sql => {
