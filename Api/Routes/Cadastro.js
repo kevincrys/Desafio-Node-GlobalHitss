@@ -11,6 +11,7 @@ router.post('/', function(req, res, next) {
  console.log(req.body.txtLogin);
  console.log(req.body.txtSenha);
  console.log(req.body.txtEmail);
+ var insert = dbsql.insertUsers({Login:req.body.txtLogin , Senha:req.body.txtSenha,Email:req.body.txtEmail})
      })
 
 
