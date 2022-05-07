@@ -2,6 +2,7 @@ import React, {useState } from 'react';
 import './App.css';
 import Header from './Header';
 import axios from 'axios';
+import { Link} from "react-router-dom";
 
 function Login() {
 
@@ -59,8 +60,12 @@ function Login() {
               </div>
 
               <button type="submit" className="btn btn-danger" style={{margin: "2%"}}>Enviar</button>
-
+  <div>
+                <Link to="/cadastro">Criar nova conta</Link>
+                </div>
            </form>
+
+
       </div>
     </div>
 
