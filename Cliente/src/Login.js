@@ -2,9 +2,10 @@ import React, {useState } from 'react';
 import './App.css';
 import Header from './Header';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-
+const navigate = useNavigate();
   const [campos, setCampos] = useState({
        txtLogin: '',
        txtSenha: ''
@@ -19,7 +20,12 @@ function Login() {
         event.preventDefault();
         console.log(campos);
         axios.post('http://localhost:3010/login', campos).then(response => {
-        alert('Dados enviados') });
+          alert(response.data.message)
+          if(response.data.concluido===true){
+           window.location.replace("https://www.claro.com.br/");
+          }
+
+      });
     }
 
   return (

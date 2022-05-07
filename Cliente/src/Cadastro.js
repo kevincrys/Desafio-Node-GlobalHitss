@@ -23,7 +23,7 @@ const navigate = useNavigate();
         console.log(campos);
         axios.post('http://localhost:3010/cadastro', campos).then(response => {
         alert(response.data.message)
-        if(response.data.concluido==true){
+        if(response.data.concluido===true){
          navigate("/");
           }
       });
