@@ -5,18 +5,19 @@ import Header from './Header';
 function Cadastro() {
 
   const [campos, setCampos] = useState({
-       txtNome: '',
+       txtLogin: '',
        txtSenha: '',
        txtEmail: ''
    });
-   function handleInputChange(event){
+   function updateInputs(event){
        campos[event.target.name] = event.target.value;
        setCampos(campos);
    }
 
-    function handleFormSubmit(event){
+    function submit(event){
         event.preventDefault();
         console.log(campos);
+         alert('Dados enviados');
     }
 
   return (
@@ -29,7 +30,7 @@ function Cadastro() {
 
 <div className="card center">
   <div className="card-body">
-  <form  onSubmit={handleFormSubmit} align="center">
+  <form  onSubmit={submit} align="center">
 
           <legend>
               <h2>Cadastro</h2>
@@ -37,18 +38,18 @@ function Cadastro() {
 
           <div>
               <label>Login:
-                  <input className="form-control" type="text" name="txtNome" id="txtNome"  onChange={handleInputChange} />
+                  <input className="form-control" type="text" name="txtLogin" id="txtNome"  onChange={updateInputs} />
               </label>
           </div>
 
           <div>
               <label>Senha:
-                  <input className="form-control" type="password" name="txtSenha" id="txtSenha"  onChange={handleInputChange}/>
+                  <input className="form-control" type="password" name="txtSenha" id="txtSenha"  onChange={updateInputs}/>
               </label>
           </div>
           <div>
               <label>email:
-                  <input className="form-control" type="text" name="txtEmail" id="txtEmail" onChange={handleInputChange} />
+                  <input className="form-control" type="text" name="txtEmail" id="txtEmail" onChange={updateInputs} />
               </label>
           </div>
           <button type="submit" className="btn btn-danger" style={{margin: "2%"}}>Enviar</button>

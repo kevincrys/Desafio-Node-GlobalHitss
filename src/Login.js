@@ -1,8 +1,25 @@
-
+import React, {useState } from 'react';
 import './App.css';
 import Header from './Header';
 
 function Login() {
+
+  const [campos, setCampos] = useState({
+       txtLogin: '',
+       txtSenha: ''
+
+   });
+   function updateInputs(event){
+       campos[event.target.name] = event.target.value;
+       setCampos(campos);
+   }
+
+    function submit(event){
+        event.preventDefault();
+        console.log(campos);
+         alert('Dados enviados');
+    }
+
   return (
     <div>
     <Header/>
@@ -11,7 +28,7 @@ function Login() {
 
     <div className="card center">
       <div className="card-body">
-      <form align="center">
+      <form   onSubmit={submit} align="center">
 
               <legend>
                   <h2>Cadastro</h2>
@@ -19,13 +36,13 @@ function Login() {
 
               <div>
                   <label>Login:
-                      <input className="form-control" type="text" name="txtNome" id="txtNome" />
+                      <input className="form-control" type="text" name="txtLogin" onChange={updateInputs} id="txtNome" />
                   </label>
               </div>
 
               <div>
                   <label>Senha:
-                      <input className="form-control" type="text" name="txtSenha" id="txtSenha" />
+                      <input className="form-control"  type="password"   name="txtSenha" onChange={updateInputs} id="txtSenha" />
                   </label>
               </div>
 
