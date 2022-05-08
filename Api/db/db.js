@@ -15,7 +15,7 @@ async function connect(){
 async function selectUsers(login){
 var sql = 'SELECT * FROM users WHERE users.Login=?'
     const conn = await connect();
-        const [rows] = await conn.query(sql, [login], function(err, rows, fields) {});
+    const [rows] = await conn.query(sql, [login], function(err, rows, fields) {});
     return rows;
 
 }

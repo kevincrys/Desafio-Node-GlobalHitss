@@ -1,5 +1,5 @@
 
-import './App.css';
+import './css/App.css';
 
 function Header() {
   return (
@@ -8,7 +8,7 @@ function Header() {
       <img src="Claro.webp"  alt=""/>
 </nav>
 </div>
-  );
+        );
 }
 
 export default Header;

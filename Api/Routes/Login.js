@@ -9,18 +9,18 @@ router.post('/', function(req, res, next) {
   sqlp.then(sql => {
        //vereifica se  foi retornado usuário com esse nome
      if(sql != ""){
-      if(sql[0].Senha == req.body.txtSenha){
-        res.json({message: "Usuário logado com sucesso", concluido: true});
+        if(sql[0].Senha == req.body.txtSenha){
+            res.json({message: "Usuário logado com sucesso", concluido: true});
         }
-      else{
-        res.json({message: "Senha incorreta", concluido: false});
-      }
+        else{
+            res.json({message: "Senha incorreta", concluido: false});
+        }
 
 
       }
       else{
-         res.json({message: "Não existe usuário com esse nome", concluido: false});
+          res.json({message: "Não existe usuário com esse nome", concluido: false});
       }
- })
+   })
 })
 module.exports = router;

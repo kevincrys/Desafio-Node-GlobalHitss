@@ -1,6 +1,6 @@
 
 import React, {useState } from 'react';
-import './App.css';
+import  './css/App.css';
 import Header from './Header';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
@@ -23,14 +23,14 @@ const navigate = useNavigate();
         event.preventDefault();
         if(campos.txtLogin !=='' && campos.txtSenha !=='' && campos.txtEmail !==''){
         axios.post('http://localhost:3010/cadastro', campos).then(response => {
-        alert(response.data.message)
-        if(response.data.concluido===true){
-         navigate("/");
+          alert(response.data.message)
+          if(response.data.concluido===true){
+            navigate("/");
           }
 
-      });
-    }
-    else{alert("Preencha todos os campos")}
+              });
+        }
+        else{alert("Preencha todos os campos")}
 
     }
 
