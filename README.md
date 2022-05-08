@@ -1,6 +1,6 @@
 # Desafios - Desenvolvedor Full Stack Global Hitss
 
-# como usar
+# Como usar
 para executar tanto a aplicação Cliente quanto a API basta executar o comando 'npm start' nas suas respectivas pastas.
 para testes basta executar 'npm test'.
 
